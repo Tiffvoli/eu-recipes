@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
+
+:root{
+    --brightYellow: #E3B505;
+    --darkBrown: #BB9457;
+    --yellow: rgb(242, 180, 80);
+    --brown: #3B2923;
+    --black: #191919;
+    --grey: #A9B2AC;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gayathr', sans-serif;
+    background:linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)), url(/img/arid-barren-clay-216692.jpg);
+    color: var(--black);
+}
+
+/* section padding */
+.section-padding{
+    padding: 3rem 0;
+}
+
+/* grid container */
+.grid-container{
+    max-width: 90vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-row-gap: 2rem;
+}
+@media screen and (min-width: 768px){
+    .grid-container--medium-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 4rem;
+    }
+    .grid-container{
+        max-width: 75vw;
+    }
+}
+
+/* section title */
+
+.section-title{
+    padding: 1rem 0.5rem;
+}
+.section-title_name{
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+.section-title_underline{
+    background: var(--yellow);
+    width: 5rem;
+    height: 0.25rem;
+}
+.section-title_text{
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    color: var(--grey);
+}
+
+
+
+
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--brightYellow);
+    z-index: 999;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* header */
+.header{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (max-width:768px){
+    .header{
+        background: url(/img/f22835873d34e8ab4992ea5e551e59a7.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+}
+
+/* banner */
+
+.banner{
+    text-align: center;
+    z-index:3;
+}
+
+.banner_title{
+    font-size: 4rem;
+    text-transform: capitalize;
+    color: var(--brightYellow);
+}
+
+@media screen and (min-width:768px){
+    .banner_title{
+        font-size: 9rem;
+    }
+}
+
+/* video */
+
+.video_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video_item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* nav btn */
+
+.navBtn{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 3.5rem;
+    color: var(--brightYellow);
+    cursor: pointer;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* nav animation */
+
+@keyframes pulse{
+    0%{
+      transform: scale(1)
+    }
+    50%{
+       transform: scale(1.5)
+    }
+    100%{
+       transform: scale(1)
+    }
+}
+
+/* nav */
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10rem;
+    background: rgba(242,180,80,0.9);
+    z-index: 3;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_single-link{
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--brown);
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 2s ease-in-out;
+}
+
+.nav_single-link:hover{
+    background: var(--brown);
+    color: rgba(242,180,80,0.9);
+    padding-left: 1.5rem;
+
+}
+
+/* */
+.nav{
+    width: 0;
+    overflow: hidden;
+    transition: all 0.5s linear;
+}
+
+.nav--show{
+    width: 10rem;
+
+}
+
+/* concept */
+.concept-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+    grid-gap: 2rem;
+}
+.concept_img-item{
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+/* food section */
+
+.food-container{
+   max-width: 90vw;
+   margin: 2rem auto;
+}
+
+.food-item_img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 1s linear;
+    opacity: 1;
+}
+
+.food-item{
+    background: linear-gradient(var(--yellow),var(--yellow));
+    overflow: hidden;
+    position: relative;
+}
+
+.food-item:hover .food-item_img{
+    opacity: 0.5;
+    transform: scale(1.2);
+}
+
+@media screen and (min-width: 576px){
+    .food-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1rem;
+    }
+}
+
+/* modal */
+.food-modal{
+    display: none;
+}
+.food-modal--show{
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-modal_item{
+    background: url(/img/Flag-Bulgaria.jpg)center/cover;
+    height: 70vh;
+    width: 80vw;
+    border: 0.5rem solid var(--yellow);
+    border-radius: 0.4rem;
+}
+
+@media screen and (min-width:768px){
+    .food-modal_item{
+        height: 80vh;
+        width: 60vw;    }
+}
+
+.food-modal_close{
+    position: fixed;
+    font-size: 3rem;
+    color: var(--brightYellow);
+    bottom: 5%;
+    right: 5%;
+    transition: color 0.5s linear;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.food-modal_close:hover{
+    color: red;
+}
+
+/*---------------Tiff's JS----------------------*/
+.recipes {
+    font-family: 'Gayathr', sans-serif;
+    font-size: 1.3rem;
+    color: black;
+    margin: 5rem 15rem 5rem 15rem;
+    text-align: center;
+    border: solid .5rem var(--yellow);
+    
+    
+  }
+  
+  .recipes .food-pic{
+      width: 50%;
+  }
+  
+  .recipes .flag{
+      width: 10%;
+  }
+  
+  .recipe-name{
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.5rem 0;
+      color: #C4AED7;
+  }
+  
+  .country{
+      padding: 0.5rem 0;
+      text-transform: capitalize;
+  }
+  
+  .flag{
+      width: 10%;
+  }
+  .difficulty{
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      font-weight: 200;
+      text-transform: capitalize;
+  }
+  
+  .price{
+      padding: 0.5rem 0;
+      font: bold 1rem;
+      color: #C4AED7;
+  }
+  
+  .short-description{
+      font-weight: 200;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+  }
+  button {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    background: #FFBFB2;
+    text-align: center;
+    text-decoration: none;
+    font: bold 1.2rem 'Montserrat';
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin: 0 1rem 1rem 0;
+    border-style: hidden;
+  }
+  
+  
+  button:focus,
+  button:active,
+  button:focus-within {
+    outline: 0;
+  }
+  
+  button:hover {
+    background-color:  #B7E8D8;
+    /*opacity: 0.5;*/
+  }
+  
+  button:active {
+    background-color: #F7DD82;
+  }
+
+/*--------------Modal Box -----------------*/
+.hide {
+    display: none;
+  }
+  .modal-background {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+      margin: auto;
+  }
+.modal-content {
+    font-family: 'Gayathr', sans-serif;
+    background-color: white;
+    margin: 1rem 12rem 1rem 12rem;
+    padding: 1rem;
+    width: 70%;
+    height: 90%;
+  
+  }
+.modal-content a{
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    background: #FFBFB2;
+    text-align: center;
+    text-decoration: none;
+    font: bold 1.2rem 'Montserrat';
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border-style: hidden;
+    margin: 3rem 23rem 3rem 23rem;
+     
+      }  
+      
+/*---------------Order Page---------------*/
+.titleimg{
+        position: absolute;
+}
+    
+.titleimg img{
+    width: 100%;
+}
+
+.title{
+        position: fixed;
+        text-align: center;
+        border: 10px solid black;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 14rem 7rem 0rem 7rem;
+        font-family: var(--primary-font);
+}
+    
+.title h1{
+        color: black;
+        font-size: 3.8rem;
+}
+
+.title p{
+        color: #e49b8c;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+}
